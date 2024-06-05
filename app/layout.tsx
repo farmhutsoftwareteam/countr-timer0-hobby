@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Courier_Prime } from "next/font/google";
 import "./globals.css";
+import Header from "../components/header";
+import Footer from "../components/footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const courierPrime = Courier_Prime({ weight: ["400", "700"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={courierPrime.className}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
